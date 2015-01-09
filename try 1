@@ -1,0 +1,25 @@
+from Tkinter import *
+
+canvas = Canvas(width = 454, height = 312,)
+canvas.pack(expand = YES, fill = BOTH)
+
+gif1 = PhotoImage(file = 'Background_Image.gif')
+canvas.create_image(0,0, image = gif1, anchor = NW)
+
+gif2 = PhotoImage(file = 'jerrycan.gif')
+canvas.create_image(155,60, image = gif2,)
+
+gif3 = PhotoImage(file = 'jerrycan.gif')
+canvas.create_image(60,170, image = gif3,)
+
+gif3 = PhotoImage(file = 'jerrycan.gif')
+canvas.create_image(60,170, image = gif3,)
+
+gif4 = PhotoImage(file = 'jerrycan.gif')
+canvas.create_image(200,180, image = gif4,)
+
+gif5 = PhotoImage(file = 'jerrycan.gif')
+canvas.create_image(300,55, image = gif5,)
+
+
+mainloop()

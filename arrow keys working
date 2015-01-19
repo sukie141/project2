@@ -1,0 +1,53 @@
+from Tkinter import *
+import pygame, sys, random
+from pygame.locals import *
+import os
+import random
+import pygame
+
+
+window = Tk()
+canvas = Canvas(width = 454, height = 312,)
+canvas.pack(expand = YES, fill = BOTH)
+
+
+gif1 = PhotoImage(file = 'Background_Image.gif')
+canvas.create_image(0,0, image = gif1, anchor = NW)
+
+id1=canvas.create_rectangle(5,110,10,115, width=2)
+
+def onLeftKey(event): 
+    print 'Got left arrow key press'
+    x1,y1,x2,y2=canvas.coords(id1)
+    canvas.coords(id1,x1-10,y1,x2-10,y2)
+    
+def onRightKey(event): 
+    print 'Got right arrow key press'
+    x1,y1,x2,y2=canvas.coords(id1)
+    canvas.coords(id1,x1+10,y1,x2+10,y2)
+    
+def onUpKey(event): 
+    print 'Got up arrow key press'
+    x1,y1,x2,y2=canvas.coords(id1)
+    canvas.coords(id1,x1,y1-10,x2,y2-10)
+    
+def onDownKey(event): 
+    print 'Got down arrow key press'
+    x1,y1,x2,y2=canvas.coords(id1)
+    canvas.coords(id1,x1,y1+10,x2,y2+10)
+
+     
+tkroot = Tk()
+                
+widget = Label(tkroot, text='')
+           
+                  
+widget.pack(expand=YES, fill=BOTH)
+
+widget.bind('<Up>',onUpKey)
+widget.bind('<Right>',onRightKey)
+widget.bind('<Left>',onLeftKey)
+widget.bind('<Down>',onDownKey)
+widget.focus()                                     
+
+tkroot.mainloop()

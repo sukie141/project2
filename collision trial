@@ -1,0 +1,16 @@
+Enter file contents heredef Update(self, scr=None):
+
+ # start
+ if self.x < 0:
+  self.x = self.maxX
+ if self.x > self.maxX:
+  self.x = 0 
+ if self.y < 0:
+  self.y = self.maxY
+ if self.y > self.maxY:
+  self.y = 0
+ # end
+
+ self.rectangle.move_ip(self.x, self.y)
+ if scr != None:
+  scr.blit(self.image, self.GetPosition())
